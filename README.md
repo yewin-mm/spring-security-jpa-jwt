@@ -51,8 +51,8 @@
 
 <a name="about-the-project"></a>
 ## ⚡️About The Project
-This is the sample backend microservice project for CURD (create, update, retrieve, delete) operation with Spring boot with Spring Data JPA.
-You can learn how to insert, update, select, delete to database by using Spring Data JPA.
+This is the sample backend microservice project for Spring Security, JWT (Access and Refresh Tokens) with Spring boot, Spring Security and Spring Data JPA.
+You can learn how to secure your application with spring security and role base authorization for your every api endpoints by using spring security.
 
 
 <a name="built-with"></a>
