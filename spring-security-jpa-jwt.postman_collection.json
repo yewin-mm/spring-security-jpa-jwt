@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "0b219ff7-7c02-4b09-99b5-c44e3c86e0b7",
+		"name": "spring-security-jpa-jwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9784437"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "superadmin@gmail.com",
+							"description": "you can change another user after creating new user",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "superadmin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8080/spring-security-jwt/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spring-security-jwt",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluQGdtYWlsLmNvbSIsInJvbGVzIjpbIkFETUlOIiwiTUFOQUdFUiIsIk5PUk1BTF9VU0VSIiwiU1VQRVJfQURNSU4iXSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3NwcmluZy1zZWN1cml0eS1qd3QvbG9naW4iLCJleHAiOjE2NjMwMTczMDl9.qWnl1aA63p2XXchc6P4Kv2yS4ghVCnEdwB0-06-0qXU",
+						"description": "You need to change token when token was expired, you can get new token by login or token/refresh api",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/spring-security-jwt/user/getAllUser/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spring-security-jwt",
+						"user",
+						"getAllUser",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluQGdtYWlsLmNvbSIsInJvbGVzIjpbIlNVUEVSX0FETUlOIiwiQURNSU4iLCJNQU5BR0VSIiwiTk9STUFMX1VTRVIiXSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3NwcmluZy1zZWN1cml0eS1qd3QvdXNlci90b2tlbi9yZWZyZXNoIiwiZXhwIjoxNjYzMDE4MTc3fQ.94_dz3d8ayOBl4LlYsdWkNuSUfleag3O3WhZMcZIGRo",
+						"type": "text",
+						"description": "You need to change token when token was expired, you can get new token by login or token/refresh api"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Ye Win\", \n    \"email\": \"yewin.mmr@gmail.com\",\n    \"password\": \"yewin\"\n}\n/*\n// you can add others user like Mg Mg\n// you can add others user like mgmg@gmail.com\n// you can change password whatever you want\n*/",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/spring-security-jwt/user/createUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spring-security-jwt",
+						"user",
+						"createUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluQGdtYWlsLmNvbSIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9zcHJpbmctc2VjdXJpdHktand0L2xvZ2luIiwiZXhwIjoxNjYzMDIyNTI5fQ.J3cTbrxAm5a7m9iWzljxb2GN7-foEqFZggjpxKHQRq0",
+						"description": "You need to change token when token was expired, you can get new token by login or token/refresh api",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/spring-security-jwt/user/token/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spring-security-jwt",
+						"user",
+						"token",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add role to user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluQGdtYWlsLmNvbSIsInJvbGVzIjpbIlNVUEVSX0FETUlOIiwiQURNSU4iLCJNQU5BR0VSIiwiTk9STUFMX1VTRVIiXSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3NwcmluZy1zZWN1cml0eS1qd3QvdXNlci90b2tlbi9yZWZyZXNoIiwiZXhwIjoxNjYzMDE4MzY2fQ.5dmzofhr9PQXSYeA8c-DbdijpsF7ktd-r8yCBbl7z8Y",
+						"type": "text",
+						"description": "You need to change token when token was expired, you can get new token by login or token/refresh api"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"yewin.mmr@gmail.com\",\n    \"roleName\":\"NORMAL_USER\" \n}\n/*\n// you can add another role to other users eg. set mgmg@gmail.com to NORMAL_USER role \n// and you can test for authority permission with that user who have NORMAL_USER role can call create user api or not.\n*/",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/spring-security-jwt/user/role/addRoleToUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spring-security-jwt",
+						"user",
+						"role",
+						"addRoleToUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By Email",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluQGdtYWlsLmNvbSIsInJvbGVzIjpbIlNVUEVSX0FETUlOIiwiQURNSU4iLCJNQU5BR0VSIiwiTk9STUFMX1VTRVIiXSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3NwcmluZy1zZWN1cml0eS1qd3QvdXNlci90b2tlbi9yZWZyZXNoIiwiZXhwIjoxNjYzMDE4OTYzfQ.ii9K8yxxVhC9j4NLf0vEuYKlg93aE6iKM1-2454MyF8",
+						"type": "text",
+						"description": "You need to change token when token was expired, you can get new token by login or token/refresh api"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/spring-security-jwt/user/getUserByEmail?email=yewin.mmr@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spring-security-jwt",
+						"user",
+						"getUserByEmail"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "yewin.mmr@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Role",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcmFkbWluQGdtYWlsLmNvbSIsInJvbGVzIjpbIlNVUEVSX0FETUlOIiwiQURNSU4iLCJNQU5BR0VSIiwiTk9STUFMX1VTRVIiXSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3NwcmluZy1zZWN1cml0eS1qd3QvdXNlci90b2tlbi9yZWZyZXNoIiwiZXhwIjoxNjYzMDE5MjI4fQ.hL9x0-4C72jEcz2Xhsy8rQswSsr6bJksgHBg8_vTNuo",
+						"description": "You need to change token when token was expired, you can get new token by login or token/refresh api",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"TEST_ROLE\"\n}\n/*\nYou can add new role, \nPlease note that if you add new role, you need to allow that in Security Config to access which api can call with that role\n*/",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/spring-security-jwt/user/role/createRole",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"spring-security-jwt",
+						"user",
+						"role",
+						"createRole"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
