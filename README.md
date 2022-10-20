@@ -66,7 +66,7 @@ This project is built with
 <a name="getting-started"></a>
 ## 🔥 Getting Started
 This project is built with java, maven, mysql database and use `Project Lombok` as plugin.
-So, please make sure all are installed in you machine.
+So, please make sure all are installed in your machine.
 
 
 <a name="before-you-begin"></a>
