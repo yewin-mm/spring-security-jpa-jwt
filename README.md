@@ -34,7 +34,7 @@
 </h1>
 
 # spring-security-jpa-jwt
-* This is the sample backend microservice project for Spring Boot + Spring Data JPA + PostgreSQL application.
+* This is the sample backend microservice project for Spring Boot + Spring Security + Spring Data JPA + MySQL application.
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -51,8 +51,8 @@
 
 <a name="about-the-project"></a>
 ## ⚡️About The Project
-This is the sample backend microservice project for CURD (create, update, retrieve, delete) operation with Spring boot with Spring Data JPA.
-You can learn how to insert, update, select, delete to database by using Spring Data JPA.
+This is the sample backend microservice project for Spring Security, JWT (Access and Refresh Tokens) with Spring boot, Spring Security and Spring Data JPA.
+You can learn how to secure your application with spring security and `role based authorization` for your every api endpoints by using spring security.
 
 
 <a name="built-with"></a>
@@ -65,8 +65,8 @@ This project is built with
 
 <a name="getting-started"></a>
 ## 🔥 Getting Started
-This project is built with java, maven, postgresql and use `Project Lombok` as plugin.
-So, please make sure all are installed in you machine.
+This project is built with java, maven, mysql database and use `Project Lombok` as plugin.
+So, please make sure all are installed in your machine.
 
 
 <a name="before-you-begin"></a>
@@ -106,7 +106,7 @@ Prerequisites can be found in here [Spring Boot Application Instruction](https:/
     * Open your imported folder in postman and inside this folder, you will see total of 7 API requests and you can test it all by clicking `Send` button and see the response.
     * Firstly, call the login api in postman with username `superadmin@gmail.com` and password `superadmin` under `x-www-form-urlencoded` under `Body` tab.
     * That username and password will automatically create after application was run, you can check in `SpringSecurityJwtApplication` class.
-    * If you stop and re-run application, please comment out that auto create user for superadmin user as that is already insert in your database. (But if you delete your local database, you need to open that code for one time)
+    * If you stop and re-run application, please comment out that auto create user code for superadmin user (in `SpringSecurityJwtApplication` class) as that is already insert in your database. (But if you delete your local database, you need to open that code for one time)
     * If you get `access-token` and `refresh-token` from login response, you can call other apis by adding that `access-token` value in header. (If you don't add that, you can't call the other apis)
     * You can create another users by calling `Create User` api for testing, you need to give role to that user to get permission to call to other api from that user by calling add role to user api.
     * There were total of 4 role in the system (SUPER_ADMIN, ADMIN, MANAGER, NORMAL_USER), for the roles you can reference role table.
@@ -137,4 +137,3 @@ Contributions are what make the open source community such an amazing place to b
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push -u origin feature/yourname`)
 5. Open a Pull Request
-
